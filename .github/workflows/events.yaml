@@ -7,3 +7,4 @@ jobs:
       - name: info
         run: |
           echo "This is the first workflow"
+          echo "Hello world"
