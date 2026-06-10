@@ -1,6 +1,7 @@
-name: Manual Events
+name: Push Events on open issues
 on:
-  workflow_dispatch:
+  issues:
+    types: opened
 jobs:
   show-info:
       runs-on: ubuntu-latest
@@ -9,5 +10,5 @@ jobs:
       #   uses: actions/checkout@v4
       - name: info
         run: |
-          echo "This is the first workflow"
+          echo "This is the Open issues trigger workflow"
           echo "Hello world"
