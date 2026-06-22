@@ -1,0 +1,19 @@
+name: Conditional Keyword for steps
+on: [push]
+  # workflow_dispatch:
+  #   inputs:
+  #     input1:
+  #       description: This is the name of the user
+  #       required: true
+  #       default: Pranay
+jobs:
+  show-info-on-condition:
+      runs-on: ubuntu-latest
+      steps:
+      # - name: Checkout Repository
+      #   uses: actions/checkout@v4
+      - name: info
+        run: |
+          echo "This is the Open issues trigger workflow"
+          # echo "Hello world ${{ github.event.inputs.input1 }}"
+        if: github.ref=='refs/heads/main' && github.event_name=='push'
