@@ -1,0 +1,20 @@
+name: Dependent Jobs
+on: [push]
+jobs:
+  first-job:
+      runs-on: ubuntu-latest
+      steps:
+      # - name: Checkout Repository
+      #   uses: actions/checkout@v4
+      - name: info
+        run: |
+          echo "This is the independent job"
+  second-job:
+      needs: first-job
+      runs-on: ubuntu-latest
+      steps:
+      # - name: Checkout Repository
+      #   uses: actions/checkout@v4
+      - name: showing another info
+        run: |
+          echo "This is the dependent job, on first-job"
