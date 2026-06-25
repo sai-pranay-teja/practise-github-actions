@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Prining name and ages
         run: |
-          echo "The name is ${{ matrix.name}} and the age is {{ matrix.age }}"
+          echo "The name is ${{ matrix.name}} and the age is ${{ matrix.age }}"
         
