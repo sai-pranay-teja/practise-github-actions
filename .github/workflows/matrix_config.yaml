@@ -1,0 +1,23 @@
+name: Matrix Configurations
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+        node: [18,20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Node repo download
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install Node dependencies
+        run: npm install
+      - name: Build application
+        run: npm build
+        
