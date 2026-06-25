@@ -7,8 +7,8 @@ jobs:
     strategy:
       matrix:
         age: [22,20]
-        name: ["pranay,"teja"]
-    runs-on: ubuntu-22.04
+        name: ["pranay","teja"]
+    runs-on: ubuntu-latest
     steps:
       - name: Prining name and ages
         run: |
