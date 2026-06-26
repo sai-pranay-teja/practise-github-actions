@@ -1,0 +1,26 @@
+name: Github container registry demo
+on:
+  push:
+    branches: main
+
+
+jobs:
+  push-to-ghcr:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Repo checkout
+        uses: actions/checkout@v2
+      - name: Login to the registry
+        uses: docker/login-action@v2
+        with:
+          regsitry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push the image
+        run: |
+          docker build . --tag ghcr.io/$${{ github.repository_owner }}/demo:v1
+          docker push ghcr.io/$${{ github.repository_owner }}/demo:v1
+  
