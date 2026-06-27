@@ -1,0 +1,10 @@
+name: Create badge status
+on:
+  push:
+    branches: main
+
+jobs:
+  demo1:
+    steps:
+      - name: printing basic
+        run: echo "hello world"
