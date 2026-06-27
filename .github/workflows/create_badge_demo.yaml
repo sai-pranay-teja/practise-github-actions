@@ -5,6 +5,7 @@ on:
 
 jobs:
   demo1:
+    runs-on: ubuntu-latest
     steps:
       - name: printing basic
         run: echo "hello world"
