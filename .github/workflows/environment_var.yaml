@@ -1,0 +1,14 @@
+name: Create badge status
+on:
+  push:
+    branches: main
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    env:
+      USE: ${{ vars.NAME }}
+    steps:
+      - name: printing basic
+        run: echo "hello world and the name is $USE"
+
