@@ -1,0 +1,15 @@
+name: Default environment variables
+on: [push]
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    # env:
+    #   VARIABLE_1: "This is my name, pranay"
+    steps:
+      - name: printing basic
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "SHA: $GITHUB_SHA"
+          echo "Event Name: $GITHUB_EVENT_NAME"
