@@ -1,0 +1,11 @@
+name: custom environment variables
+on: [push]
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    env:
+      VARIABLE_1: "This is my name, pranay"
+    steps:
+      - name: printing basic
+        run: echo "hello world and the variable here is $VARIABLE_1"
