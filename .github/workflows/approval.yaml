@@ -1,0 +1,13 @@
+name: Workflow Approval Demo
+on: [push]
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    # env:
+    #   VARIABLE_1: "This is my name, pranay"
+    environment:
+      name: production
+    steps:
+      - name: printing basic
+        run: echo "hello world and the secret here is ${{ secrets.PASS_KEY }}"
