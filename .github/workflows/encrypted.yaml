@@ -1,0 +1,11 @@
+name: Secrets encrypted demo
+on: [push]
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    # env:
+    #   VARIABLE_1: "This is my name, pranay"
+    steps:
+      - name: printing basic
+        run: echo "hello world and the secret here is ${{ secrets.PASS_KEY }}
