@@ -8,4 +8,4 @@ jobs:
     #   VARIABLE_1: "This is my name, pranay"
     steps:
       - name: printing basic
-        run: echo "hello world and the secret here is ${{ secrets.PASS_KEY }}
+        run: echo "hello world and the secret here is ${{ secrets.PASS_KEY }}"
