@@ -1,0 +1,19 @@
+name: use of "needs" keyword
+
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    outputs:
+      my-value: ${{ steps.make.outputs.my-value }}
+    steps:
+      - id: make
+        run: |
+          # write a job/step output (recommended method)
+          echo "my-value=hello-from-produce" >> $GITHUB_OUTPUT
+
+  consume:
+    needs: produce
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Got value: ${{ needs.produce.outputs.my-value }}"
