@@ -16,4 +16,4 @@ jobs:
     needs: produce
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Got value: ${{ needs.produce.outputs.my-value }}"
+      - run: echo "Got value: ${{ needs.produce.outputs['my-value'] }}"
