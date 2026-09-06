@@ -11,4 +11,4 @@ jobs:
       - name: Echo the payload
         run: |
           echo "Event type: ${{ github.event.action }}"
-          echo "Payload value: ${{ github.event.client_payload.env }}"
+          echo "Payload value: ${{ github.event.client_payload.act }}"
