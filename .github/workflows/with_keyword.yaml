@@ -1,0 +1,14 @@
+name: use of with keyword
+
+on: workflow_dispatch
+
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: with key word
+        uses: actions/checkout@v1
+        with:
+          name: sai
+        
